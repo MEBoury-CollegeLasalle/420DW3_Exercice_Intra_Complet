@@ -37,6 +37,27 @@ public class CoursesDAO {
 
     private void ConfigureDataTable(DataTable table) {
 
+        DataColumn idColumn = table.Columns["Id"] ?? throw new Exception("Colonne [Id] inexistante dans la table.");
+        idColumn.ReadOnly = true;
+        idColumn.AllowDBNull = true;
+
+        DataColumn codeColumn = table.Columns["Code"] ?? throw new Exception("Colonne [Code] inexistante dans la table.");
+        codeColumn.MaxLength = 12;
+
+        DataColumn titleColumn = table.Columns["Titre"] ?? throw new Exception("Colonne [Titre] inexistante dans la table.");
+        titleColumn.MaxLength = 128;
+
+        DataColumn descColumn = table.Columns["Description"] ?? throw new Exception("Colonne [Description] inexistante dans la table.");
+        descColumn.AllowDBNull = true;
+
+        DataColumn dateCreatedColumn = table.Columns["DateCreation"] ?? throw new Exception("Colonne [DateCreation] inexistante dans la table.");
+        dateCreatedColumn.ReadOnly = true;
+        dateCreatedColumn.AllowDBNull = true;
+
+        DataColumn dateModifiedColumn = table.Columns["DateModification"] ?? throw new Exception("Colonne [DateModification] inexistante dans la table.");
+        dateModifiedColumn.ReadOnly = true;
+        dateModifiedColumn.AllowDBNull = true;
+
     }
 
     private SqlDataAdapter CreateDataAdapter() {
