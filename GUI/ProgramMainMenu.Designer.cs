@@ -24,11 +24,31 @@ partial class ProgramMainMenu {
     ///  the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        buttonQuit = new Button();
+        this.SuspendLayout();
+        // 
+        // buttonQuit
+        // 
+        buttonQuit.Location = new Point(12, 315);
+        buttonQuit.Name = "buttonQuit";
+        buttonQuit.Size = new Size(358, 48);
+        buttonQuit.TabIndex = 0;
+        buttonQuit.Text = "Quitter";
+        buttonQuit.UseVisualStyleBackColor = true;
+        buttonQuit.Click += this.buttonQuit_Click;
+        // 
+        // ProgramMainMenu
+        // 
+        this.AutoScaleDimensions = new SizeF(8F, 20F);
+        this.AutoScaleMode = AutoScaleMode.Font;
+        this.ClientSize = new Size(382, 453);
+        this.Controls.Add(buttonQuit);
+        this.Name = "ProgramMainMenu";
+        this.Text = "Menu Principal";
+        this.ResumeLayout(false);
     }
 
     #endregion
+
+    private Button buttonQuit;
 }

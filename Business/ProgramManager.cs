@@ -18,7 +18,7 @@ public class ProgramManager {
 
         ApplicationConfiguration.Initialize();
 
-        this.menu = new ProgramMainMenu();
+        this.menu = new ProgramMainMenu(this);
         this.dataSet = new DataSet();
         this.connection = ConnectionFactory.GetConnection();
 
@@ -28,7 +28,7 @@ public class ProgramManager {
         Application.Run(this.menu);
     }
 
-    public void Stop() {
+    public void Terminate() {
         if (this.connection.State == ConnectionState.Open) {
             this.connection.Close();
         }
