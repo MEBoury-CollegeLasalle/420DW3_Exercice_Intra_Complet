@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _420DW3_Exercice_Intra_Test.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,10 @@ using System.Windows.Forms;
 
 namespace _420DW3_Exercice_Intra_Test.GUI;
 public partial class CoursesForm : Form {
-    public CoursesForm() {
-        InitializeComponent();
+    private CoursesManager manager;
+
+    public CoursesForm(CoursesManager manager) {
+        this.manager = manager;
+        this.InitializeComponent();
     }
 }
