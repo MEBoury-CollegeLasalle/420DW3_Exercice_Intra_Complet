@@ -11,16 +11,21 @@ using System.Threading.Tasks;
 namespace _420DW3_Exercice_Intra_Test.Business;
 public class CoursesManager {
     private CoursesForm form;
-    private CoursesDAO courseDAO;
+    private CoursesDAO coursesDAO;
     private DataSet dataSet;
 
     public CoursesManager(SqlConnection connection, DataSet dataSet) {
         this.dataSet = dataSet;
         this.form = new CoursesForm(this);
-        this.courseDAO = new CoursesDAO(connection);
+        this.coursesDAO = new CoursesDAO(connection);
     }
 
     public void OpenCoursesWindow() {
         DialogResult result = this.form.ShowDialog();
+    }
+
+    public void LoadCoursesData() {
+        DataTable table = this.coursesDAO.GetDataTable(this.dataSet);
+        this.form.BindDataTable(table);
     }
 }
