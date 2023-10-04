@@ -23,7 +23,7 @@ public class ProgramManager {
         this.dataSet = new DataSet();
         this.connection = ConnectionFactory.GetConnection();
 
-        this.coursesManager = new CoursesManager(this.connection);
+        this.coursesManager = new CoursesManager(this.connection, this.dataSet);
 
     }
 
