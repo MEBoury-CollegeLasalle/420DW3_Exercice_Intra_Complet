@@ -24,6 +24,18 @@ public class CoursesDAO {
     }
 
     public void LoadData(DataSet dataSet) {
+        if (dataSet.Tables.Contains(TABLE_NAME)) {
+            dataSet.Tables[TABLE_NAME]?.Clear();
+        }
+
+        if (this.connection.State != ConnectionState.Open) {
+            this.connection.Open();
+        }
+        this.sqlDataAdapter.Fill(dataSet, TABLE_NAME);
+        connection.Close();
+
+        DataTable table = dataSet.Tables[TABLE_NAME] ?? throw new Exception($"Table [{TABLE_NAME}] inexistante dans le DataSet.");
+        this.ConfigureDataTable(table);
 
     }
 
