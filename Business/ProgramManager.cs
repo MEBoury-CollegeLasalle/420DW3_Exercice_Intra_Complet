@@ -13,6 +13,7 @@ public class ProgramManager {
     private readonly ProgramMainMenu menu;
     private readonly DataSet dataSet;
     private readonly SqlConnection connection;
+    private readonly CoursesManager coursesManager;
 
     public ProgramManager() {
 
@@ -22,6 +23,12 @@ public class ProgramManager {
         this.dataSet = new DataSet();
         this.connection = ConnectionFactory.GetConnection();
 
+        this.coursesManager = new CoursesManager();
+
+    }
+
+    public void OpenCoursesManagementWindow() {
+        this.coursesManager.OpenCoursesWindow();
     }
 
     public void Start() {
