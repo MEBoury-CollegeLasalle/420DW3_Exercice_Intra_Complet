@@ -40,7 +40,9 @@ public class CoursesDAO {
     }
 
     public DataTable GetDataTable(DataSet dataSet) {
-
+        this.LoadData(dataSet);
+        DataTable table = dataSet.Tables[TABLE_NAME] ?? throw new Exception($"Table [{TABLE_NAME}] inexistante dans le DataSet.");
+        return table;
     }
 
     public void SaveChanges(DataSet dataSet) {
