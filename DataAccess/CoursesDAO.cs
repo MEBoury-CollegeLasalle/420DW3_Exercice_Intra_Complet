@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using _420DW3_Exercice_Intra_Test.Business.Exceptions;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -50,8 +51,17 @@ public class CoursesDAO {
         if (this.connection.State != ConnectionState.Open) {
             this.connection.Open();
         }
-        this.sqlDataAdapter.Update(dataSet, TABLE_NAME);
-        connection.Close();
+        try {
+            this.sqlDataAdapter.Update(dataSet, TABLE_NAME);
+
+        } catch (DBConcurrencyException exception) {
+            exception.Row?.RejectChanges();
+            exception.Row?.ClearErrors();
+            throw new ConcurrencyException(exception);
+
+        } finally {
+            connection.Close();
+        }
     }
 
     private void ConfigureDataTable(DataTable table) {

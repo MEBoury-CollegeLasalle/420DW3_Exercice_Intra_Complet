@@ -1,4 +1,5 @@
-﻿using _420DW3_Exercice_Intra_Test.DataAccess;
+﻿using _420DW3_Exercice_Intra_Test.Business.Exceptions;
+using _420DW3_Exercice_Intra_Test.DataAccess;
 using _420DW3_Exercice_Intra_Test.GUI;
 using Microsoft.Data.SqlClient;
 using System;
@@ -22,9 +23,14 @@ public class CoursesManager {
 
     public void OpenCoursesWindow() {
         this.LoadCoursesData();
-        DialogResult result = this.form.ShowDialog();
-        if (result == DialogResult.OK) {
+        _ = this.form.ShowDialog();
+    }
+
+    public void SaveChanges() {
+        try {
             this.coursesDAO.SaveChanges(this.dataSet);
+        } catch (ConcurrencyException ex) {
+            _ = MessageBox.Show(ex.Message);
         }
     }
 

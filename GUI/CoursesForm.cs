@@ -28,7 +28,7 @@ public partial class CoursesForm : Form {
     }
 
     private void ButtonSave_Click(object sender, EventArgs e) {
-        this.DialogResult = DialogResult.OK;
+        this.manager.SaveChanges();
     }
 
     private void ButtonLoadData_Click(object sender, EventArgs e) {
