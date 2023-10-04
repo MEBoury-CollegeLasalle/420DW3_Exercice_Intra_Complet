@@ -109,7 +109,7 @@ public class CoursesDAO {
 
     private void OnRowUpdating(object sender, SqlRowUpdatingEventArgs arguments) {
         if (arguments.StatementType == StatementType.Update) {
-            arguments.Row["DateModification"] = DateTime.Now;
+            arguments.Command.Parameters[3].Value = DateTime.Now;
         }
     }
 
