@@ -74,7 +74,6 @@ public class CoursesDAO {
         dateCreatedColumn.AllowDBNull = true;
 
         DataColumn dateModifiedColumn = table.Columns["DateModification"] ?? throw new Exception("Colonne [DateModification] inexistante dans la table.");
-        dateModifiedColumn.ReadOnly = true;
         dateModifiedColumn.AllowDBNull = true;
 
     }
