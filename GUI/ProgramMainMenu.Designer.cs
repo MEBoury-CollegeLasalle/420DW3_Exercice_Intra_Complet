@@ -25,6 +25,7 @@ partial class ProgramMainMenu {
     /// </summary>
     private void InitializeComponent() {
         buttonQuit = new Button();
+        buttonManageCourses = new Button();
         this.SuspendLayout();
         // 
         // buttonQuit
@@ -37,11 +38,22 @@ partial class ProgramMainMenu {
         buttonQuit.UseVisualStyleBackColor = true;
         buttonQuit.Click += this.buttonQuit_Click;
         // 
+        // buttonManageCourses
+        // 
+        buttonManageCourses.Location = new Point(12, 65);
+        buttonManageCourses.Name = "buttonManageCourses";
+        buttonManageCourses.Size = new Size(358, 48);
+        buttonManageCourses.TabIndex = 1;
+        buttonManageCourses.Text = "Gérer les cours";
+        buttonManageCourses.UseVisualStyleBackColor = true;
+        buttonManageCourses.Click += this.buttonManageCourses_Click;
+        // 
         // ProgramMainMenu
         // 
         this.AutoScaleDimensions = new SizeF(8F, 20F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.ClientSize = new Size(382, 453);
+        this.Controls.Add(buttonManageCourses);
         this.Controls.Add(buttonQuit);
         this.Name = "ProgramMainMenu";
         this.Text = "Menu Principal";
@@ -51,4 +63,5 @@ partial class ProgramMainMenu {
     #endregion
 
     private Button buttonQuit;
+    private Button buttonManageCourses;
 }

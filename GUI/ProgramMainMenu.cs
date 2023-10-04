@@ -13,4 +13,8 @@ public partial class ProgramMainMenu : Form {
     private void buttonQuit_Click(object sender, EventArgs e) {
         this.manager.Terminate();
     }
+
+    private void buttonManageCourses_Click(object sender, EventArgs e) {
+
+    }
 }
