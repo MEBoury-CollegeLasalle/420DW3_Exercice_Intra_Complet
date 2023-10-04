@@ -18,6 +18,11 @@ public partial class CoursesForm : Form {
         this.InitializeComponent();
     }
 
+    public void BindDataTable(DataTable table) {
+        this.dataGridView1.DataSource = table;
+        this.dataGridView1.Refresh();
+    }
+
     private void buttonClose_Click(object sender, EventArgs e) {
         this.DialogResult = DialogResult.Cancel;
     }
