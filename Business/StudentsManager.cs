@@ -9,27 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _420DW3_Exercice_Intra_Test.Business;
-public class CoursesManager {
-    private readonly CoursesForm form;
-    private readonly CoursesDAO coursesDAO;
+public class StudentsManager {
+    private readonly StudentsForm form;
+    private readonly StudentsDAO studentsDAO;
     private readonly DataSet dataSet;
 
-    public CoursesManager(SqlConnection connection, DataSet dataSet) {
+    public StudentsManager(SqlConnection connection, DataSet dataSet) {
         this.dataSet = dataSet;
-        this.form = new CoursesForm(this);
-        this.coursesDAO = new CoursesDAO(connection);
+        this.form = new StudentsForm(this);
+        this.studentsDAO = new StudentsDAO(connection);
     }
 
-    public void OpenCoursesWindow() {
-        this.LoadCoursesData();
+    public void OpenStudentsWindow() {
+        this.LoadStudentsData();
         DialogResult result = this.form.ShowDialog();
         if (result == DialogResult.OK) {
-            this.coursesDAO.SaveChanges(this.dataSet);
+            this.studentsDAO.SaveChanges(this.dataSet);
         }
     }
 
-    public void LoadCoursesData() {
-        DataTable table = this.coursesDAO.GetDataTable(this.dataSet);
+    public void LoadStudentsData() {
+        DataTable table = this.studentsDAO.GetDataTable(this.dataSet);
         this.form.BindDataTable(table);
     }
 }

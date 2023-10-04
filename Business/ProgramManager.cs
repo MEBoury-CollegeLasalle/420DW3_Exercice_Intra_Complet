@@ -14,6 +14,7 @@ public class ProgramManager {
     private readonly DataSet dataSet;
     private readonly SqlConnection connection;
     private readonly CoursesManager coursesManager;
+    private readonly StudentsManager studentsManager;
 
     public ProgramManager() {
 
@@ -24,11 +25,16 @@ public class ProgramManager {
         this.connection = ConnectionFactory.GetConnection();
 
         this.coursesManager = new CoursesManager(this.connection, this.dataSet);
+        this.studentsManager = new StudentsManager(this.connection, this.dataSet);
 
     }
 
     public void OpenCoursesManagementWindow() {
         this.coursesManager.OpenCoursesWindow();
+    }
+
+    public void OpenStudentsManagementWindow() {
+        this.studentsManager.OpenStudentsWindow();
     }
 
     public void Start() {

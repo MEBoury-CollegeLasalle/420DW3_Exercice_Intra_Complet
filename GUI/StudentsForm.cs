@@ -10,28 +10,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _420DW3_Exercice_Intra_Test.GUI;
-public partial class CoursesForm : Form {
-    private readonly CoursesManager manager;
+public partial class StudentsForm : Form {
+    private readonly StudentsManager studentsManager;
 
-    public CoursesForm(CoursesManager manager) {
-        this.manager = manager;
+    public StudentsForm(StudentsManager manager) {
+        this.studentsManager = manager;
         this.InitializeComponent();
     }
 
     public void BindDataTable(DataTable table) {
-        this.dataGridView1.DataSource = table;
-        this.dataGridView1.Refresh();
+        this.studentsGridView.DataSource = table;
+        this.studentsGridView.Refresh();
     }
 
-    private void ButtonClose_Click(object sender, EventArgs e) {
-        this.DialogResult = DialogResult.Cancel;
+    private void ButtonLoad_Click(object sender, EventArgs e) {
+        this.studentsManager.LoadStudentsData();
     }
 
     private void ButtonSave_Click(object sender, EventArgs e) {
         this.DialogResult = DialogResult.OK;
     }
 
-    private void ButtonLoadData_Click(object sender, EventArgs e) {
-        this.manager.LoadCoursesData();
+    private void ButtonQuit_Click(object sender, EventArgs e) {
+        this.DialogResult = DialogResult.Cancel;
     }
 }
