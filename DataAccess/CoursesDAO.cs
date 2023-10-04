@@ -43,8 +43,13 @@ public class CoursesDAO {
 
     }
 
-    public void SaveChanges(DataSet dataSet) { 
+    public void SaveChanges(DataSet dataSet) {
 
+        if (this.connection.State != ConnectionState.Open) {
+            this.connection.Open();
+        }
+        this.sqlDataAdapter.Update(dataSet, TABLE_NAME);
+        connection.Close();
     }
 
     private void ConfigureDataTable(DataTable table) {
