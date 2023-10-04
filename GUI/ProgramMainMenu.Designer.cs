@@ -46,7 +46,7 @@ partial class ProgramMainMenu {
         buttonManageCourses.TabIndex = 1;
         buttonManageCourses.Text = "Gérer les cours";
         buttonManageCourses.UseVisualStyleBackColor = true;
-        buttonManageCourses.Click += this.buttonManageCourses_Click;
+        buttonManageCourses.Click += this.ButtonManageCourses_Click;
         // 
         // ProgramMainMenu
         // 

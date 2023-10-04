@@ -14,7 +14,7 @@ public partial class ProgramMainMenu : Form {
         this.manager.Terminate();
     }
 
-    private void buttonManageCourses_Click(object sender, EventArgs e) {
-
+    private void ButtonManageCourses_Click(object sender, EventArgs e) {
+        this.manager.OpenCoursesManagementWindow();
     }
 }
