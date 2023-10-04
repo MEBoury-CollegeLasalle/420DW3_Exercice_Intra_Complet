@@ -10,7 +10,7 @@ public class ConnectionFactory {
     private static SqlConnection? CONNECTION;
 
     public static SqlConnection GetConnection() {
-        CONNECTION ??= new SqlConnection("Server=.\\SQL2022DEV;Integrated Security=true;TrustServerCertificate=true;Database=dw3_exercices_intra;");
+        CONNECTION ??= new SqlConnection("Server=.\\SQL2022DEV;Integrated Security=true;TrustServerCertificate=true;Database=da3_exercices_intra;");
         return CONNECTION;
     }
 
