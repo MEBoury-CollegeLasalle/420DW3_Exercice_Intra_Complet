@@ -23,11 +23,15 @@ public partial class CoursesForm : Form {
         this.dataGridView1.Refresh();
     }
 
-    private void buttonClose_Click(object sender, EventArgs e) {
+    private void ButtonClose_Click(object sender, EventArgs e) {
         this.DialogResult = DialogResult.Cancel;
     }
 
-    private void buttonSave_Click(object sender, EventArgs e) {
-        this.DialogResult= DialogResult.OK;
+    private void ButtonSave_Click(object sender, EventArgs e) {
+        this.DialogResult = DialogResult.OK;
+    }
+
+    private void ButtonLoadData_Click(object sender, EventArgs e) {
+        this.manager.LoadCoursesData();
     }
 }

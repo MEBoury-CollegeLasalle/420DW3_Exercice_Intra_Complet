@@ -21,7 +21,11 @@ public class CoursesManager {
     }
 
     public void OpenCoursesWindow() {
+        this.LoadCoursesData();
         DialogResult result = this.form.ShowDialog();
+        if (result == DialogResult.OK) {
+            this.coursesDAO.SaveChanges(this.dataSet);
+        }
     }
 
     public void LoadCoursesData() {

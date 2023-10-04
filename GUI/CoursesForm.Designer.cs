@@ -49,7 +49,7 @@ partial class CoursesForm {
         buttonClose.TabIndex = 1;
         buttonClose.Text = "Fermer";
         buttonClose.UseVisualStyleBackColor = true;
-        buttonClose.Click += this.buttonClose_Click;
+        buttonClose.Click += this.ButtonClose_Click;
         // 
         // buttonSave
         // 
@@ -59,7 +59,7 @@ partial class CoursesForm {
         buttonSave.TabIndex = 2;
         buttonSave.Text = "Sauvegarder";
         buttonSave.UseVisualStyleBackColor = true;
-        buttonSave.Click += this.buttonSave_Click;
+        buttonSave.Click += this.ButtonSave_Click;
         // 
         // buttonLoadData
         // 
@@ -69,6 +69,7 @@ partial class CoursesForm {
         buttonLoadData.TabIndex = 3;
         buttonLoadData.Text = "Charger Données";
         buttonLoadData.UseVisualStyleBackColor = true;
+        buttonLoadData.Click += this.ButtonLoadData_Click;
         // 
         // CoursesForm
         // 
